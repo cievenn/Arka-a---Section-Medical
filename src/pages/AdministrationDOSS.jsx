@@ -100,7 +100,7 @@ const AdministrationDOSS = () => (
           
           <div className="bg-slate-900/50 p-6 rounded border border-slate-800 text-cyan-100/90 leading-relaxed">
             <div className="text-cyan-500 mb-6 font-bold border-b border-slate-700 pb-2 flex justify-between">
-              <span>=== MODÈLE : RAPPORT D'EXPERTISE POST-MORTEM ===</span>
+              <span>=== MODÈLE : RAPPORT D'AUTOPSIE ===</span>
               <span>REF: PM-{Math.floor(Math.random() * 90000) + 10000}-KR</span>
             </div>
             
