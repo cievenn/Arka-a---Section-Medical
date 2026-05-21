@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Droplet, Scale, BookOpen, Syringe, Skull, FileArchive } from 'lucide-react';
+import { Droplet, Scale, BookOpen, Syringe, Skull, FileArchive, X } from 'lucide-react';
 
 const Layout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const mainRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [showCredits, setShowCredits] = useState(false);
 
   const tabs = [
     { path: '/', label: 'I. Cadre Légal', icon: Scale },
@@ -147,12 +148,59 @@ const Layout = () => {
         </div>
 
         {/* Footer Global */}
-        <footer className="border-t border-slate-800/40 py-8 px-8 text-center z-10 bg-kiri-950/30 backdrop-blur-sm">
+        <footer className="border-t border-slate-800/40 py-8 px-8 text-center z-10 bg-kiri-950/30 backdrop-blur-sm flex flex-col items-center justify-center gap-4">
           <p className="text-[0.65rem] font-mono text-slate-500 tracking-[0.3em] uppercase">
             ARKAÏA — SECTION MÉDICALE — KIRIGAKURE NO SATO
           </p>
+          <button 
+            onClick={() => setShowCredits(true)}
+            className="text-[0.6rem] font-mono text-cyan-500/50 hover:text-cyan-400 tracking-[0.2em] uppercase transition-colors"
+          >
+            [ Crédits & Remerciements ]
+          </button>
         </footer>
       </main>
+
+      {/* Credits Modal */}
+      {showCredits && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fadeIn"
+          onClick={() => setShowCredits(false)}
+        >
+          <div 
+            className="bg-kiri-950 border border-cyan-900/50 rounded-xl p-8 max-w-2xl w-full mx-4 relative shadow-[0_0_50px_rgba(34,211,238,0.1)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setShowCredits(false)}
+              className="absolute top-4 right-4 text-slate-500 hover:text-cyan-400 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            
+            <h2 className="text-2xl font-serif text-white mb-6 border-b border-slate-800 pb-4 flex items-center gap-3">
+              <div className="w-2 h-6 bg-cyan-500 rounded-full"></div>
+              Crédits & Mentions
+            </h2>
+
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-cyan-400 font-bold font-mono tracking-wider mb-2 text-sm">Auteur & Concepteur Unique du Codex : Ketsugen Chinoike</h3>
+                <p className="text-slate-300 text-sm leading-relaxed pl-4 border-l-2 border-cyan-900/50">
+                  Créateur absolu de l'intégralité du document médical et scientifique. Développement complet de l'interface web, architecture globale, rédaction de la totalité des protocoles et de la théorie médicale, modélisation des 5 unités spécialisées, conception du système complet d'accréditations et de la Section Noire.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-cyan-400 font-bold font-mono tracking-wider mb-2 text-sm mt-8">Apports Externes & Documentation : Tsukigetsu Hozuki</h3>
+                <p className="text-slate-300 text-sm leading-relaxed pl-4 border-l-2 border-cyan-900/50">
+                  Idée originale du système de paliers de blessures (Roll) & partage de quelques exemples d'herbes communes ayant servi de déclic pour la division botanique.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
