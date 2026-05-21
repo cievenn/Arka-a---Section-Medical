@@ -1,151 +1,179 @@
 import React from 'react';
-import { 
-  Dna, Microscope, Scissors, Syringe, HeartPulse, 
-  AlertTriangle, Biohazard, Bone, Activity
+import {
+  Skull, FileArchive, Search, Fingerprint, Eye, Droplet,
+  AlertTriangle, Lock, ShieldAlert, ThermometerSnowflake,
+  Microscope, Dna, Scissors
 } from 'lucide-react';
 import Panel from '../components/Panel';
 import SectionHeader from '../components/SectionHeader';
-import Quote from '../components/Quote';
+import CollapsibleGradient from '../components/CollapsibleGradient';
 import Divider from '../components/Divider';
 
 const ExpertiseLegiste = () => (
-  <div className="space-y-10 pb-10">
-    <SectionHeader icon={Microscope} title="IV. Chirurgie Avancée et Sciences du Chakra Médical" subtitle="Opérations spécialisées, régénération, transplantations et recherche biomédicale shinobi" />
+  <div className="space-y-16 pb-10">
+    <SectionHeader icon={Skull} title="IV. Expertise Médico-Légale" subtitle="La Morgue, Kinjutsu, Médecine Expérimentale et Autopsies" colorClass="text-purple-400 text-glow-purple" />
 
-    {/* Principe Fondamental */}
-    <Quote author="Ketsugen Chinoike">
-      Le chakra ne remplace pas la médecine. Il accélère, manipule et force les mécanismes biologiques existants.
-    </Quote>
+
+    {/* PROTOCOLE AUTOPSIE */}
+    <div>
+      <h3 className="text-2xl lg:text-3xl font-serif text-white mb-10 flex items-center gap-4 justify-center">
+        <span className="w-8 h-px bg-purple-500"></span>
+        Protocole d'Autopsie Standard (P.A.S)
+        <span className="w-8 h-px bg-purple-500"></span>
+      </h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Panel className="flex flex-col relative overflow-hidden group hover:border-cyan-500/50 transition-colors" hover={false}>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-cyan-500/50"></div>
+          <div className="text-cyan-400 mb-6 flex justify-between items-center">
+            <Search size={32} />
+            <span className="font-mono text-5xl font-black opacity-20">01</span>
+          </div>
+          <h4 className="text-lg font-bold text-white mb-3">Examen Externe</h4>
+          <ul className="space-y-3 text-sm text-slate-300 font-mono flex-1">
+            <li className="flex gap-2"><span className="text-cyan-500">›</span> Photographie et croquis des lésions.</li>
+            <li className="flex gap-2"><span className="text-cyan-500">›</span> Prélèvements sous-unguéaux (ADN agresseur).</li>
+            <li className="flex gap-2"><span className="text-cyan-500">›</span> Analyse des lividités (heure du décès).</li>
+            <li className="flex gap-2"><span className="text-cyan-500">›</span> Étude de la rigidité cadavérique.</li>
+          </ul>
+        </Panel>
+
+        <Panel className="flex flex-col relative overflow-hidden group hover:border-rose-500/50 transition-colors" hover={false}>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-rose-500/50"></div>
+          <div className="text-rose-400 mb-6 flex justify-between items-center">
+            <Scissors size={32} />
+            <span className="font-mono text-5xl font-black opacity-20">02</span>
+          </div>
+          <h4 className="text-lg font-bold text-white mb-3">Incision Menton-Pubis</h4>
+          <ul className="space-y-3 text-sm text-slate-300 font-mono flex-1">
+            <li className="flex gap-2"><span className="text-rose-500">›</span> Incision en Y.</li>
+            <li className="flex gap-2"><span className="text-rose-500">›</span> Résection du plastron sterno-costal.</li>
+            <li className="flex gap-2"><span className="text-rose-500">›</span> Prélèvement en bloc des organes (technique de Virchow ou Zenker).</li>
+            <li className="flex gap-2"><span className="text-rose-500">›</span> Pesée de chaque organe vitaux.</li>
+          </ul>
+        </Panel>
+
+        <Panel className="flex flex-col relative overflow-hidden group hover:border-amber-500/50 transition-colors" hover={false}>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-amber-500/50"></div>
+          <div className="text-amber-400 mb-6 flex justify-between items-center">
+            <Microscope size={32} />
+            <span className="font-mono text-5xl font-black opacity-20">03</span>
+          </div>
+          <h4 className="text-lg font-bold text-white mb-3">Tox/Histo & Clôture</h4>
+          <ul className="space-y-3 text-sm text-slate-300 font-mono flex-1">
+            <li className="flex gap-2"><span className="text-amber-500">›</span> Prélèvements : sang, urine, bile, humeur vitrée.</li>
+            <li className="flex gap-2"><span className="text-amber-500">›</span> Recherche de poisons (Herbe au Loup).</li>
+            <li className="flex gap-2"><span className="text-amber-500">›</span> Remise en place des organes (ou substitut).</li>
+            <li className="flex gap-2"><span className="text-amber-500">›</span> Suture en surjet (baseball stitch).</li>
+          </ul>
+        </Panel>
+      </div>
+    </div>
 
     <Divider symbol="cross" />
 
-    {/* Section Chirurgie & Bistouri */}
+    {/* SECRET MÉDICAL ET DŌJUTSU */}
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <Panel className="border-blue-900/30">
-        <h3 className="text-xl font-bold text-blue-400 mb-5 flex items-center gap-3 border-b border-slate-700/50 pb-3">
-          <Scissors className="text-blue-400 shrink-0"/> Chirurgie Shinobi & Bistouri
+      <Panel className="border-indigo-900/40 bg-gradient-to-br from-kiri-950 to-indigo-950/20 h-full">
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-4 border-b border-indigo-900/50 pb-4">
+          <div className="p-2 bg-indigo-900/40 rounded-xl"><Eye className="text-indigo-400" size={24} /></div>
+          Extraction de Dōjutsu
         </h3>
-        <p className="text-base text-slate-200 mb-5 leading-relaxed">
-          Branche avancée combinant techniques chirurgicales classiques et contrôle du chakra pour traiter destructions organiques, blessures de guerre et lésions par Ninjutsu.
+        <p className="text-sm text-slate-300 leading-relaxed mb-6">
+          La récupération d'un œil aux propriétés génétiques spéciales (Byakugan, Sharingan) est une priorité absolue. Un Dōjutsu se nécrose rapidement si le nerf optique est sectionné sans stase.
         </p>
-        <div className="space-y-4">
-          <div className="p-4 bg-black/40 border border-blue-900/50 rounded-xl">
-            <h4 className="text-cyan-400 font-bold text-base mb-2">Le Bistouri de Chakra (Chakura no Mesu)</h4>
-            <p className="text-sm text-slate-300 leading-relaxed">Transforme le chakra en lame chirurgicale extrêmement fine. Permet d'inciser les tissus sans ouvrir massivement le corps, d'atteindre les organes internes et de couper les nerfs. La profondeur est contrôlée par le flux, réduisant le risque infectieux.</p>
-          </div>
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            <div className="bg-slate-800/50 p-4 rounded-lg border-l-3 border-green-500">
-              <strong className="text-green-400 block mb-2">Médical</strong>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Chirurgie interne</li>
-                <li>Retrait de toxines</li>
-                <li>Séparation de nécroses</li>
-              </ul>
-            </div>
-            <div className="bg-slate-800/50 p-4 rounded-lg border-l-3 border-red-500">
-              <strong className="text-red-400 block mb-2">Offensif</strong>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Section musculaire/nerveuse</li>
-                <li>Hémorragie interne</li>
-                <li>Paralysie (requiert précision)</li>
-              </ul>
-            </div>
-          </div>
+        <div className="bg-black/50 p-5 rounded-xl border border-indigo-900/30">
+          <strong className="text-indigo-400 font-mono uppercase tracking-widest text-xs block mb-3 border-b border-indigo-900/50 pb-2">Protocole d'Énucléation</strong>
+          <ol className="list-decimal list-inside text-sm text-slate-300 space-y-2 font-mono">
+            <li>Section des muscles oculomoteurs via Scalpel de Chakra.</li>
+            <li>Infiltration d'un fluide conservateur (base: Racine de Réglisse).</li>
+            <li>Section nette du nerf optique.</li>
+            <li>Plongée immédiate dans un bocal de liquide amniotique artificiel de grade médical militaire.</li>
+          </ol>
         </div>
       </Panel>
 
-      <Panel className="border-emerald-900/30">
-        <h3 className="text-xl font-bold text-emerald-400 mb-5 flex items-center gap-3 border-b border-slate-700/50 pb-3">
-          <Syringe className="text-emerald-400 shrink-0"/> Microchirurgie
-        </h3>
-        <p className="text-base text-slate-200 mb-5 leading-relaxed">
-          Interventions extrêmement précises nécessitant une stabilité mentale parfaite et une connaissance chirurgicale des flux internes.
-        </p>
-        <div className="bg-black/40 p-5 rounded-xl border border-emerald-900/50">
-          <h4 className="text-emerald-300 font-bold text-base mb-3">Cibles cliniques</h4>
-          <div className="flex flex-wrap gap-2 mb-5">
-            <span className="px-3 py-1.5 bg-emerald-900/30 text-emerald-400 text-sm rounded-full border border-emerald-800/50">Nerfs & Vaisseaux</span>
-            <span className="px-3 py-1.5 bg-emerald-900/30 text-emerald-400 text-sm rounded-full border border-emerald-800/50">Tenketsu</span>
-            <span className="px-3 py-1.5 bg-emerald-900/30 text-emerald-400 text-sm rounded-full border border-emerald-800/50">Tissus cérébraux</span>
-          </div>
-          <div className="p-3 bg-red-950/30 border-l-3 border-red-500 rounded-lg text-sm text-slate-200">
-            <strong className="text-red-400">Danger de l'intervention :</strong> La moindre erreur de contrôle du chakra peut provoquer paralysie, mort cérébrale, hémorragie interne ou la perte définitive du système circulatoire de chakra du patient.
-          </div>
+      <Panel className="border-cyan-900/40 bg-gradient-to-br from-kiri-950 to-cyan-950/20 h-full flex flex-col justify-between">
+        <div>
+          <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-4 border-b border-cyan-900/50 pb-4">
+            <div className="p-2 bg-cyan-900/40 rounded-xl"><Search className="text-cyan-400" size={24} /></div>
+            Recherche de Lésions Internes
+          </h3>
+          <p className="text-sm text-slate-300 leading-relaxed mb-6">
+            L'autopsie d'un shinobi assassiné demande de traquer des blessures invisibles à l'œil nu, souvent perpétrées par du Taijutsu avancé ou du Ninjutsu d'infiltration.
+          </p>
+          <ul className="space-y-3 mb-6">
+            <li className="flex gap-3 items-start bg-slate-900/50 p-3 rounded-lg border border-slate-700/50">
+              <span className="text-cyan-500 mt-0.5">›</span>
+              <span className="text-sm text-slate-300">Recherche de micro-hématomes sur les méridiens (Jūken).</span>
+            </li>
+            <li className="flex gap-3 items-start bg-slate-900/50 p-3 rounded-lg border border-slate-700/50">
+              <span className="text-cyan-500 mt-0.5">›</span>
+              <span className="text-sm text-slate-300">Analyse de la liquéfaction cellulaire (Rasengan / Choc de vent).</span>
+            </li>
+          </ul>
         </div>
       </Panel>
     </div>
 
     <Divider symbol="diamond" />
 
-    {/* Section Régénération */}
-    <Panel className="border-indigo-900/30 bg-gradient-to-br from-slate-900 to-indigo-950/10">
-      <h3 className="text-xl font-bold text-indigo-400 mb-5 flex items-center gap-3 border-b border-slate-700/50 pb-3">
-        <HeartPulse className="text-indigo-400 shrink-0"/> Régénération Cellulaire & Sōzō Saisei
-      </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <p className="text-base text-slate-200 mb-4 leading-relaxed">La régénération médicale consiste à accélérer artificiellement la reconstruction tissulaire par la division cellulaire (mitose).</p>
-          <ul className="space-y-3 text-sm text-slate-300">
-            <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-indigo-500 mt-2 shrink-0"/>Stimule la division cellulaire et la synthèse protéique.</li>
-            <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-indigo-500 mt-2 shrink-0"/>Maintient les cellules viables malgré les traumatismes massifs.</li>
-            <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-red-500 mt-2 shrink-0"/><span><span className="text-red-300 font-semibold">Limite :</span> Toute régénération consomme énormément d'énergie et épuise la durée de vie (les cellules humaines ont une limite naturelle de division).</span></li>
-          </ul>
+    {/* ZONES INTERDITES / KINJUTSU */}
+    <Panel className="border-red-900/60 bg-kiri-950 relative overflow-hidden shadow-[0_0_50px_rgba(220,38,38,0.1)]">
+      {/* Background Alerts */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-red-600"></div>
+      <div className="absolute top-0 bottom-0 left-0 w-1 bg-red-600"></div>
+      <div className="absolute top-0 bottom-0 right-0 w-1 bg-red-600"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-red-600"></div>
+
+      {/* Danger Tape */}
+      <div className="absolute -right-16 top-10 rotate-45 bg-red-600 text-black font-black uppercase tracking-[0.5em] text-xs py-2 px-32 shadow-lg">RESTRICTED SECTION - OININ CLEARANCE ONLY</div>
+
+      <div className="flex flex-col items-center justify-center mb-10 mt-6">
+        <Lock size={48} className="text-red-600 mb-4" />
+        <h3 className="text-3xl font-serif text-red-500 uppercase tracking-widest text-glow-red">Kinjutsu & Expérimentations</h3>
+        <p className="text-red-400/80 font-mono text-sm mt-2 tracking-widest uppercase">Niveau d'accréditation: Mizukage / Médecin-Chef</p>
+      </div>
+
+      <div className="space-y-6 max-w-4xl mx-auto">
+        <div className="p-6 bg-red-950/20 border border-red-900/50 rounded-xl relative group">
+          <div className="absolute inset-0 bg-red-900/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <h4 className="text-red-400 font-bold text-lg mb-2 flex items-center gap-2">
+            <ShieldAlert size={20} /> Edo Tensei (Réincarnation des Âmes)
+          </h4>
+          <p className="text-sm text-red-200/80 leading-relaxed font-mono">
+            <strong className="text-red-500 uppercase tracking-wide border-b border-red-900/50 pb-0.5 mr-2">Classification: Hérésie Médicale de Rang S.</strong>
+            Nécessite un sacrifice humain vivant et l'ADN du défunt. La section médicale a pour consigne d'incinérer toute trace ADN suspecte tombant entre de mauvaises mains.
+          </p>
         </div>
-        <div className="bg-indigo-950/30 border border-indigo-500/30 p-6 rounded-xl relative overflow-hidden group">
-          <Dna className="absolute -right-4 -top-4 text-indigo-500/10 group-hover:text-indigo-500/20 transition-colors duration-500" size={100} />
-          <h4 className="font-serif text-xl text-indigo-300 font-bold mb-3 relative z-10">Création Rebirth (Sōzō Saisei)</h4>
-          <p className="text-sm text-slate-200 relative z-10 mb-3 leading-relaxed">Sommet du ninjutsu médical (créé par Tsunade). Libère une réserve titanesque de chakra pour forcer les cellules à se diviser instantanément et reconstruire les organes vitaux détruits.</p>
-          <p className="text-sm text-red-400 font-bold relative z-10 border-t border-indigo-900/50 pt-3 mt-3">
-            Contrepartie fatale : Force l'organisme au-delà de sa limite de Hayflick. Réduit irrémédiablement l'espérance de vie du praticien.
+
+        <div className="p-6 bg-red-950/20 border border-red-900/50 rounded-xl relative group">
+          <div className="absolute inset-0 bg-red-900/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <h4 className="text-red-400 font-bold text-lg mb-2 flex items-center gap-2">
+            <ShieldAlert size={20} /> Greffes ADN Aberrantes (Chimères)
+          </h4>
+          <p className="text-sm text-red-200/80 leading-relaxed font-mono">
+            <strong className="text-red-500 uppercase tracking-wide border-b border-red-900/50 pb-0.5 mr-2">Classification: Kinjutsu Expérimental.</strong>
+            Tentatives d'implanter le Kekkei Genkai de Mokuton ou les cellules d'entités divines. Le taux de mortalité (rejet sous forme de transformation monstrueuse ou combustion) avoisine les 99.9%. Toute expérience non avalisée par Kiri est punie de mort.
+          </p>
+        </div>
+
+        <div className="p-6 bg-red-950/20 border border-red-900/50 rounded-xl relative group">
+          <div className="absolute inset-0 bg-red-900/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <h4 className="text-red-400 font-bold text-lg mb-2 flex items-center gap-2">
+            <ShieldAlert size={20} /> Jutsu de Transfert de Vie (Kishō Tensei)
+          </h4>
+          <p className="text-sm text-red-200/80 leading-relaxed font-mono">
+            <strong className="text-red-500 uppercase tracking-wide border-b border-red-900/50 pb-0.5 mr-2">Classification: Rang S.</strong>
+            Le médecin transfère sa propre force vitale en échange de celle du patient. Si la cible est morte, l'utilisateur meurt inévitablement en ravivant la cible. Strictement proscrit pour préserver l'élite médicale du village.
           </p>
         </div>
       </div>
+
+      <div className="mt-10 text-center">
+        <p className="text-xs text-red-500/50 font-mono tracking-[0.3em] uppercase">Document confidentiel. Toute fuite d'informations entraînera l'intervention des Oinin.</p>
+      </div>
     </Panel>
-
-    {/* Greffes, Expérimentations et Interdits */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <Panel className="border-purple-900/30">
-        <h3 className="font-bold text-purple-400 mb-4 flex items-center gap-2 border-b border-slate-700/50 pb-3 text-lg">
-          <Bone size={20}/> Greffes & Transplants
-        </h3>
-        <p className="text-sm text-slate-200 mb-4 leading-relaxed">Remplacement tissulaire/organique incluant l'implantation d'éléments puissants (Sharingan, Cellules de Hashirama).</p>
-        <div className="bg-black/40 p-3 rounded-lg border border-purple-900/30 text-sm">
-          <strong className="text-slate-300 block mb-2">Risques Majeurs :</strong>
-          <ul className="list-disc list-inside text-red-400 space-y-1">
-            <li>Rejet immunitaire massif</li>
-            <li>Incompatibilité de Chakra</li>
-            <li>Dégénérescence mentale</li>
-            <li>Mutation corporelle incontrôlable</li>
-          </ul>
-        </div>
-      </Panel>
-
-      <Panel className="border-cyan-900/30">
-        <h3 className="font-bold text-cyan-400 mb-4 flex items-center gap-2 border-b border-slate-700/50 pb-3 text-lg">
-          <Microscope size={20}/> Recherche Médicale
-        </h3>
-        <p className="text-sm text-slate-200 mb-4 leading-relaxed">Expérimentations visant à réduire la mortalité et comprendre les maladies rares, toxines et hybridations.</p>
-        <div className="bg-black/40 p-3 rounded-lg border border-cyan-900/30 text-sm">
-          <strong className="text-green-400 block mb-2">Autorisé :</strong>
-          <span className="text-slate-300">Recherche thérapeutique, élaboration d'antidotes, chirurgie régénérative contrôlée.</span>
-        </div>
-      </Panel>
-
-      <Panel className="border-red-900/30 bg-red-950/10">
-        <h3 className="font-bold text-red-500 mb-4 flex items-center gap-2 border-b border-slate-700/50 pb-3 text-lg">
-          <Biohazard size={20}/> Médecine Interdite
-        </h3>
-        <p className="text-sm text-slate-200 mb-4 leading-relaxed">Pratiques classées <strong className="text-red-400">Kinjutsu</strong> (Techniques Interdites) à cause de leur dangerosité extrême.</p>
-        <div className="bg-black/40 p-3 rounded-lg border border-red-900/30 text-sm">
-          <ul className="list-disc list-inside text-slate-300 space-y-1">
-            <li>Modifications génétiques illégales</li>
-            <li>Tests humains forcés</li>
-            <li>Résurrection & cadavres</li>
-            <li>Fusion biologique & suppression</li>
-          </ul>
-        </div>
-      </Panel>
-    </div>
   </div>
 );
 

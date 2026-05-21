@@ -1,194 +1,208 @@
 import React from 'react';
 import { 
-  FileArchive, Activity, FileText, Skull, 
-  Database, Eye, Flame
+  FileArchive, Database, ShieldAlert, FolderLock, 
+  Terminal, ShieldCheck, HardDrive, Key, Fingerprint
 } from 'lucide-react';
 import Panel from '../components/Panel';
 import SectionHeader from '../components/SectionHeader';
 import Divider from '../components/Divider';
 
-const AdministrationDOSS = () => {
-  return (
-    <div className="space-y-12 pb-10 animate-in fade-in duration-700">
-      <SectionHeader icon={Database} title="V. Médecine Légale, Investigations et Archives Biologiques" subtitle="Autopsies, analyses médico-légales, identification des jutsu et conservation des données médicales" />
+const AdministrationDOSS = () => (
+  <div className="space-y-16 pb-10">
+    <SectionHeader icon={FileArchive} title="V. Dossiers & Administration" subtitle="Gestion des données, classification et protocoles de secret médical" colorClass="text-slate-200 text-glow-cyan" />
 
-      <div className="relative min-h-[600px]">
-        <div className="space-y-10 w-full">
-          
-          {/* Objectifs & Intro */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <Panel className="lg:col-span-1 border-purple-900/30 bg-gradient-to-b from-purple-950/20 to-slate-900/80 p-6">
-              <h4 className="text-purple-400 font-bold text-sm mb-6 font-mono tracking-widest border-b border-purple-900/50 pb-3">/ OBJECTIFS GLOBAUX</h4>
-              <div className="space-y-8 text-sm text-slate-200">
-                <div>
-                  <strong className="block text-slate-100 mb-3 uppercase tracking-wider text-xs">Déterminations :</strong>
-                  <ul className="list-disc list-inside text-slate-400 space-y-2 marker:text-purple-500">
-                    <li>Comment la victime est morte</li>
-                    <li>Mort naturelle vs provoquée</li>
-                    <li>Implication d'un Jutsu</li>
-                    <li>Altération du corps</li>
-                  </ul>
-                </div>
-                <div>
-                  <strong className="block text-slate-100 mb-3 uppercase tracking-wider text-xs">Recherches Cliniques :</strong>
-                  <ul className="list-disc list-inside text-slate-400 space-y-2 marker:text-purple-500">
-                    <li>Fractures & Brûlures internes</li>
-                    <li>Lésions nerveuses</li>
-                    <li>Traces de chakra & Sceaux</li>
-                    <li>Destruction organique</li>
-                    <li>Altérations génétiques</li>
-                  </ul>
-                </div>
-              </div>
-            </Panel>
-
-            <Panel className="lg:col-span-3 border-slate-700/50 bg-slate-900/40 p-6">
-              <h4 className="text-cyan-400 font-bold text-sm mb-6 font-mono tracking-widest border-b border-slate-700/50 pb-3">/ PROTOCOLE OPÉRATOIRE D'AUTOPSIE (3 PHASES)</h4>
-              
-              <div className="space-y-5">
-                {/* Phase 1 */}
-                <div className="bg-black/50 border border-slate-800 p-6 rounded-xl hover:border-cyan-900/50 transition-colors flex flex-col md:flex-row gap-6">
-                  <div className="md:w-1/3 shrink-0">
-                    <h5 className="text-white font-bold text-lg mb-2 flex items-center gap-2"><Eye size={18} className="text-cyan-400"/> I. Examen Externe</h5>
-                    <p className="text-sm text-slate-400 leading-relaxed">Analyse visuelle et palpation initiale du corps avant toute incision.</p>
-                  </div>
-                  <div className="md:w-2/3 flex flex-wrap gap-2.5 content-start font-mono text-xs">
-                    {[
-                      { text: 'Blessures visibles', color: 'text-cyan-300 border-cyan-900/50 bg-cyan-950/20' },
-                      { text: 'Brûlures / Sceaux', color: 'text-slate-300 border-slate-700 bg-slate-800' },
-                      { text: 'Traces de combat', color: 'text-slate-300 border-slate-700 bg-slate-800' },
-                      { text: 'Tatouages / Marques', color: 'text-cyan-300 border-cyan-900/50 bg-cyan-950/20' },
-                      { text: 'Cicatrices', color: 'text-slate-300 border-slate-700 bg-slate-800' },
-                      { text: 'Signes de poison', color: 'text-red-300 border-red-900/50 bg-red-950/20' },
-                      { text: 'Décoloration', color: 'text-slate-300 border-slate-700 bg-slate-800' },
-                      { text: 'Rigidité cadavérique', color: 'text-cyan-300 border-cyan-900/50 bg-cyan-950/20' },
-                      { text: 'État des yeux', color: 'text-slate-300 border-slate-700 bg-slate-800' },
-                      { text: 'Perturbations Tenketsu', color: 'text-purple-300 border-purple-900/50 bg-purple-950/20' },
-                      { text: 'État des ongles', color: 'text-slate-300 border-slate-700 bg-slate-800' },
-                      { text: 'Résidus de chakra', color: 'text-purple-300 border-purple-900/50 bg-purple-950/20' },
-                      { text: 'Écoulements', color: 'text-slate-300 border-slate-700 bg-slate-800' },
-                      { text: 'Altérations cellules', color: 'text-purple-300 border-purple-900/50 bg-purple-950/20' },
-                    ].map((item, i) => (
-                      <span key={i} className={`px-3 py-1.5 border rounded-md ${item.color}`}>
-                        {item.text}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Phase 2 */}
-                <div className="bg-black/50 border border-slate-800 p-6 rounded-xl hover:border-blue-900/50 transition-colors flex flex-col md:flex-row gap-6">
-                  <div className="md:w-1/3 shrink-0">
-                    <h5 className="text-white font-bold text-lg mb-2 flex items-center gap-2"><Activity size={18} className="text-blue-400"/> II. Examen Interne</h5>
-                    <p className="text-sm text-slate-400 leading-relaxed">Ouverture thoracique et crânienne. Utilisation de scanner de chakra post-mortem.</p>
-                  </div>
-                  <div className="md:w-2/3 space-y-4 text-sm font-mono">
-                    <div className="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
-                      <span className="text-blue-400 font-bold block mb-1 text-xs uppercase tracking-wider">Cibles :</span>
-                      <span className="text-slate-300">Organes, Os, Cerveau, Poumons, Cœur, Réseau Vasculaire.</span>
-                    </div>
-                    <div className="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
-                      <span className="text-red-400 font-bold block mb-1 text-xs uppercase tracking-wider">Lésions :</span>
-                      <span className="text-slate-300">Hémorragies, perforations, nécroses, thromboses, thermiques/électriques.</span>
-                    </div>
-                    <div className="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
-                      <span className="text-purple-400 font-bold block mb-1 text-xs uppercase tracking-wider">Keirakukei :</span>
-                      <span className="text-slate-300">Destruction des conduits, saturation en chakra, résidus élémentaires.</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Phase 3 */}
-                <div className="bg-black/50 border border-slate-800 p-6 rounded-xl hover:border-green-900/50 transition-colors flex flex-col md:flex-row gap-6">
-                  <div className="md:w-1/3 shrink-0">
-                    <h5 className="text-white font-bold text-lg mb-2 flex items-center gap-2"><FileText size={18} className="text-green-400"/> III. Prélèvements</h5>
-                    <p className="text-sm text-slate-400 leading-relaxed">Extraction de biomatériaux pour analyses ADN et banques de souches.</p>
-                  </div>
-                  <div className="md:w-2/3 flex flex-wrap gap-3 content-start font-mono text-xs">
-                    {['Sang (Fémoral)', 'Urine', 'Moelle osseuse', 'Liquide gastrique', 'Tissus organiques', 'Follicules pileux', 'Humeur vitrée', 'Organes ciblés'].map(item => (
-                      <span key={item} className="px-4 py-2 bg-slate-800 border border-slate-600 text-slate-200 rounded-lg shadow-sm">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Panel>
+    {/* NIVEAUX D'ACCREDITATION */}
+    <Panel className="border-slate-700/50 bg-gradient-to-br from-kiri-950 to-slate-900/40 relative overflow-hidden">
+      <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-slate-800/20 via-transparent to-transparent pointer-events-none"></div>
+      
+      <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-4 border-b border-slate-700/50 pb-4 relative z-10">
+        <div className="p-2 bg-slate-800 rounded-xl border border-slate-700"><Key className="text-slate-400" size={24}/></div>
+        Niveaux d'Accréditation
+      </h3>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+        {/* Niveau C */}
+        <div className="flex flex-col group p-5 bg-slate-900/60 border border-slate-800 rounded-xl hover:border-slate-500/50 transition-all hover:-translate-y-1 hover:shadow-lg">
+          <div className="flex justify-between items-center mb-4">
+            <span className="font-mono text-2xl font-black text-slate-500 group-hover:text-slate-400 transition-colors">C-Class</span>
+            <ShieldCheck size={20} className="text-slate-600" />
           </div>
+          <p className="text-sm text-slate-400 leading-relaxed font-mono flex-1 border-t border-slate-800 pt-3">
+            Accès aux dossiers médicaux standards, groupes sanguins et blessures mineures. <br/><span className="text-slate-500 mt-2 block">Accès: Apprentis, Infirmiers.</span>
+          </p>
+        </div>
 
-          <Divider symbol="diamond" />
+        {/* Niveau B */}
+        <div className="flex flex-col group p-5 bg-cyan-950/20 border border-cyan-900/30 rounded-xl hover:border-cyan-500/50 transition-all hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(34,211,238,0.1)]">
+          <div className="flex justify-between items-center mb-4">
+            <span className="font-mono text-2xl font-black text-cyan-500 group-hover:text-cyan-400 transition-colors">B-Class</span>
+            <ShieldCheck size={20} className="text-cyan-600" />
+          </div>
+          <p className="text-sm text-slate-300 leading-relaxed font-mono flex-1 border-t border-cyan-900/50 pt-3">
+            Accès aux bilans chirurgicaux, prescriptions de poisons et données biométriques de base. <br/><span className="text-cyan-500/70 mt-2 block">Accès: Médecins Actifs, Chūnin.</span>
+          </p>
+        </div>
 
-          {/* Causes de mort */}
-          <Panel className="border-red-900/30 p-8">
-            <h4 className="text-red-400 font-bold text-sm mb-6 font-mono tracking-widest border-b border-red-900/50 pb-3 flex items-center gap-2"><Skull size={18}/> / CLASSIFICATION DES CAUSES DE MORT</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-              
-              <div className="p-5 border border-red-900/40 bg-red-950/10 rounded-xl hover:bg-red-950/20 transition-colors">
-                <div className="text-red-500 font-bold text-sm uppercase tracking-widest mb-3 border-b border-red-900/30 pb-2">Hémorragique</div>
-                <p className="text-sm text-slate-300 mb-4 leading-relaxed">Perte massive de sang provoquant chute de pression, arrêt circulatoire et insuffisance organique.</p>
-                <div className="text-xs text-slate-400 font-mono bg-black/40 p-3 rounded border border-red-900/20">
-                  <strong className="text-red-300 block mb-1">Armes/Causes :</strong> Armes blanches, taijutsu lourd, scalpels chakra offensifs.
-                </div>
-              </div>
+        {/* Niveau A */}
+        <div className="flex flex-col group p-5 bg-purple-950/20 border border-purple-900/30 rounded-xl hover:border-purple-500/50 transition-all hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(168,85,247,0.1)]">
+          <div className="flex justify-between items-center mb-4">
+            <span className="font-mono text-2xl font-black text-purple-500 group-hover:text-purple-400 transition-colors">A-Class</span>
+            <ShieldAlert size={20} className="text-purple-600" />
+          </div>
+          <p className="text-sm text-slate-300 leading-relaxed font-mono flex-1 border-t border-purple-900/50 pt-3">
+            Rapports d'autopsie avancés, profils ADN, dossiers psychiatriques. <br/><span className="text-purple-500/70 mt-2 block">Accès: Médecin-Chef, Maître Légiste.</span>
+          </p>
+        </div>
 
-              <div className="p-5 border border-blue-900/40 bg-blue-950/10 rounded-xl hover:bg-blue-950/20 transition-colors">
-                <div className="text-blue-500 font-bold text-sm uppercase tracking-widest mb-3 border-b border-blue-900/30 pb-2">Neurologique</div>
-                <p className="text-sm text-slate-300 mb-4 leading-relaxed">Destruction irréversible du cerveau, de la moelle épinière ou du système nerveux central.</p>
-                <div className="text-xs text-slate-400 font-mono bg-black/40 p-3 rounded border border-blue-900/20">
-                  <strong className="text-blue-300 block mb-1">Armes/Causes :</strong> Raiton de haut niveau, trauma crânien, Genjutsu neurologique extrême.
-                </div>
-              </div>
-
-              <div className="p-5 border border-cyan-900/40 bg-cyan-950/10 rounded-xl hover:bg-cyan-950/20 transition-colors">
-                <div className="text-cyan-500 font-bold text-sm uppercase tracking-widest mb-3 border-b border-cyan-900/30 pb-2">Respiratoire</div>
-                <p className="text-sm text-slate-300 mb-4 leading-relaxed">Privation totale d'oxygène entraînant l'asphyxie cellulaire et l'arrêt cérébral.</p>
-                <div className="text-xs text-slate-400 font-mono bg-black/40 p-3 rounded border border-cyan-900/20">
-                  <strong className="text-cyan-300 block mb-1">Armes/Causes :</strong> Noyade Suiton, fumées Katon, écrasement thoracique Doton, paralysie.
-                </div>
-              </div>
-
-              <div className="p-5 border border-orange-900/40 bg-orange-950/10 rounded-xl hover:bg-orange-950/20 transition-colors">
-                <div className="text-orange-500 font-bold text-sm uppercase tracking-widest mb-3 border-b border-orange-900/30 pb-2">Destruction</div>
-                <p className="text-sm text-slate-300 mb-4 leading-relaxed">Les organes vitaux deviennent instantanément non fonctionnels (fusion, vaporisation, nécrose).</p>
-                <div className="text-xs text-slate-400 font-mono bg-black/40 p-3 rounded border border-orange-900/20">
-                  <strong className="text-orange-300 block mb-1">Armes/Causes :</strong> Carbonisation interne, nécrose tissulaire massive, surcharge chakra.
-                </div>
-              </div>
-
-            </div>
-          </Panel>
-
-          {/* Rapport Post-Mortem */}
-          <Panel className="border-slate-800 bg-slate-900/50 p-8">
-            <div className="flex justify-between items-center mb-8 border-b border-slate-700/80 pb-4">
-              <h4 className="text-slate-200 font-bold text-sm font-mono tracking-widest">/ STANDARD DU RAPPORT POST-MORTEM</h4>
-              <span className="text-xs bg-slate-800 border border-slate-600 px-4 py-1.5 text-slate-300 font-mono rounded-full tracking-wider">DOC-CLASSIFIÉ</span>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm font-mono text-slate-300">
-              <div className="bg-black/60 p-5 border border-slate-700 rounded-xl hover:border-cyan-500/50 transition-colors shadow-inner">
-                <strong className="text-cyan-400 block mb-3 text-lg">1. Identification</strong>
-                <p className="text-slate-400 leading-relaxed">Nom, âge estimé, clan, unité militaire d'attache, matricule shinobi.</p>
-              </div>
-              <div className="bg-black/60 p-5 border border-slate-700 rounded-xl hover:border-cyan-500/50 transition-colors shadow-inner">
-                <strong className="text-cyan-400 block mb-3 text-lg">2. Externe</strong>
-                <p className="text-slate-400 leading-relaxed">État général, blessures visibles, anomalies physiques, rigidité.</p>
-              </div>
-              <div className="bg-black/60 p-5 border border-slate-700 rounded-xl hover:border-cyan-500/50 transition-colors shadow-inner">
-                <strong className="text-cyan-400 block mb-3 text-lg">3. Interne</strong>
-                <p className="text-slate-400 leading-relaxed">État des organes, lésions internes invisibles, foyers d'hémorragies.</p>
-              </div>
-              <div className="bg-black/60 p-5 border border-slate-700 rounded-xl hover:border-green-500/50 transition-colors shadow-inner">
-                <strong className="text-green-400 block mb-3 text-lg">4. Conclusion</strong>
-                <p className="text-slate-400 leading-relaxed">Cause exacte de la mort, heure approximative, Jutsu ou Arme hypothétique.</p>
-              </div>
-            </div>
-          </Panel>
-
+        {/* Niveau S */}
+        <div className="flex flex-col group p-5 bg-red-950/20 border border-red-900/30 rounded-xl hover:border-red-500/50 transition-all hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(220,38,38,0.1)] relative overflow-hidden">
+          <div className="absolute right-0 top-0 w-8 h-8 bg-red-600 rotate-45 translate-x-4 -translate-y-4"></div>
+          <div className="flex justify-between items-center mb-4">
+            <span className="font-mono text-2xl font-black text-red-500 group-hover:text-red-400 transition-colors text-glow-red">S-Class</span>
+            <FolderLock size={20} className="text-red-600" />
+          </div>
+          <p className="text-sm text-red-200/80 leading-relaxed font-mono flex-1 border-t border-red-900/50 pt-3">
+            Registres de Kinjutsu, stockages Dōjutsu, expérimentations classifiées. <br/><span className="text-red-500 font-bold mt-2 block">Accès: Mizukage Uniquement.</span>
+          </p>
         </div>
       </div>
+    </Panel>
+
+    <Divider symbol="dot" />
+
+    {/* TERMINAL DE DONNÉES */}
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <Panel className="lg:col-span-2 border-slate-700/50 bg-black flex flex-col font-mono relative overflow-hidden" hover={false}>
+        {/* En-tête Terminal */}
+        <div className="absolute top-0 left-0 right-0 h-10 bg-slate-900 border-b border-slate-800 flex items-center px-4 justify-between select-none">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+          </div>
+          <span className="text-xs text-slate-500 tracking-widest">KIRI_MED_OS v3.1.4 - SYSTEM_TERMINAL</span>
+          <Terminal size={14} className="text-slate-500" />
+        </div>
+
+        {/* Contenu Terminal */}
+        <div className="mt-12 p-2 space-y-4 text-sm">
+          <div className="text-green-400">
+            <span className="opacity-50">root@kirigakure-med:~$</span> ./init_dossier.sh --post-mortem
+          </div>
+          <div className="text-slate-300 pl-4 border-l-2 border-slate-800 space-y-2">
+            <p>[INFO] Initialisation du rapport d'autopsie...</p>
+            <p>[INFO] Chargement du protocole légiste... <span className="text-green-400">OK</span></p>
+          </div>
+          
+          <div className="text-green-400">
+            <span className="opacity-50">root@kirigakure-med:~$</span> cat format_rapport_post_mortem.txt
+          </div>
+          
+          <div className="bg-slate-900/50 p-6 rounded border border-slate-800 text-cyan-100/90 leading-relaxed">
+            <div className="text-cyan-500 mb-6 font-bold border-b border-slate-700 pb-2 flex justify-between">
+              <span>=== MODÈLE : RAPPORT D'EXPERTISE POST-MORTEM ===</span>
+              <span>REF: PM-{Math.floor(Math.random() * 90000) + 10000}-KR</span>
+            </div>
+            
+            {/* 1. Identification */}
+            <div className="mb-6">
+              <h4 className="text-cyan-400 font-bold mb-2">1. IDENTIFICATION DU SUJET</h4>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm border-l-2 border-slate-800 pl-3">
+                <p><span className="text-slate-500">Nom/Prénom:</span> [CLASSIFIÉ]</p>
+                <p><span className="text-slate-500">Âge/Sexe:</span> ____ / ____</p>
+                <p><span className="text-slate-500">Groupe Sanguin:</span> [ A / B / AB / O ] [ +/- ]</p>
+                <p><span className="text-slate-500">Niveau Accréditation:</span> [ C / B / A / S ]</p>
+                <p><span className="text-slate-500">Grade:</span> ____</p>
+              </div>
+            </div>
+
+            {/* 2. Examen Externe */}
+            <div className="mb-6">
+              <h4 className="text-cyan-400 font-bold mb-2">2. EXAMEN EXTERNE</h4>
+              <div className="space-y-2 text-sm border-l-2 border-slate-800 pl-3">
+                <p><span className="text-slate-500">État général et Rigidité cadavérique:</span> <span className="border-b border-slate-700/50 border-dashed inline-block w-64"></span></p>
+                <p><span className="text-slate-500">Blessures visibles (lacérations, brûlures):</span></p>
+                <div className="border border-slate-800 border-dashed h-10 w-full bg-black/20"></div>
+                <p><span className="text-slate-500">Anomalies physiques notables:</span> <span className="border-b border-slate-700/50 border-dashed inline-block w-64"></span></p>
+              </div>
+            </div>
+
+            {/* 3. Examen Interne */}
+            <div className="mb-6">
+              <h4 className="text-cyan-400 font-bold mb-2">3. EXAMEN INTERNE</h4>
+              <div className="space-y-2 text-sm border-l-2 border-slate-800 pl-3">
+                <p><span className="text-slate-500">État des organes vitaux:</span></p>
+                <div className="border border-slate-800 border-dashed h-10 w-full bg-black/20"></div>
+                <p><span className="text-slate-500">Lésions internes & Foyers d'hémorragies:</span></p>
+                <div className="border border-slate-800 border-dashed h-10 w-full bg-black/20"></div>
+              </div>
+            </div>
+
+            {/* 4. Conclusion */}
+            <div>
+              <h4 className="text-cyan-400 font-bold mb-2">4. CONCLUSION LÉGISTE</h4>
+              <div className="grid grid-cols-2 gap-4 text-sm border-l-2 border-slate-800 pl-3 mb-4">
+                <p><span className="text-slate-500">Heure approx. du décès:</span> ____:____</p>
+                <p><span className="text-slate-500">Cause exacte de la mort:</span> <span className="border-b border-slate-700/50 border-dashed inline-block w-32"></span></p>
+              </div>
+              <div className="text-sm border-l-2 border-slate-800 pl-3 space-y-2">
+                <p><span className="text-slate-500">Arme ou Jutsu hypothétique responsable:</span></p>
+                <div className="border border-slate-800 border-dashed h-10 w-full bg-black/20"></div>
+              </div>
+              
+              <div className="mt-4 flex justify-end">
+                <div className="text-right">
+                  <span className="text-slate-500 text-xs block mb-1">Visa du Médecin Légiste:</span>
+                  <div className="border border-slate-800 border-dashed h-12 w-32 flex items-center justify-center bg-black/20">
+                    <Fingerprint size={24} className="text-cyan-900/50" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-green-400 flex items-center gap-2">
+            <span className="opacity-50">root@kirigakure-med:~$</span> <div className="w-2 h-4 bg-green-400 animate-pulse"></div>
+          </div>
+        </div>
+      </Panel>
+
+      <div className="space-y-8 flex flex-col">
+        <Panel className="border-red-900/30 bg-gradient-to-bl from-kiri-950 to-red-950/20 flex-1">
+          <h3 className="text-lg font-bold text-red-400 mb-6 flex items-center gap-3 border-b border-red-900/50 pb-3">
+            <Database size={20} /> Protection des Données
+          </h3>
+          <p className="text-sm text-slate-300 leading-relaxed mb-4">
+            Les archives médicales de Kirigakure ne sont pas que du papier. Elles contiennent les faiblesses génétiques, les maladies et les limites de chaque ninja du village.
+          </p>
+          <ul className="space-y-3 font-mono text-xs">
+            <li className="p-3 bg-black/40 rounded border border-red-900/30 flex items-start gap-3">
+              <ShieldAlert size={14} className="text-red-500 shrink-0 mt-0.5" />
+              <span className="text-slate-400">Tout dossier sortant de l'enceinte de l'hôpital doit être scellé avec un Fūinjutsu d'auto-combustion.</span>
+            </li>
+            <li className="p-3 bg-black/40 rounded border border-red-900/30 flex items-start gap-3">
+              <ShieldAlert size={14} className="text-red-500 shrink-0 mt-0.5" />
+              <span className="text-slate-400">Tentative de piratage du réseau d'information = Exécution.</span>
+            </li>
+          </ul>
+        </Panel>
+
+        <Panel className="border-cyan-900/30 bg-gradient-to-tl from-kiri-950 to-cyan-950/20">
+          <h3 className="text-lg font-bold text-cyan-400 mb-6 flex items-center gap-3 border-b border-cyan-900/50 pb-3">
+            <HardDrive size={20} /> Base de Données Biométrique
+          </h3>
+          <p className="text-sm text-slate-300 leading-relaxed font-mono">
+            Chaque shinobi blessé gravement subit un prélèvement sanguin obligatoire. Les échantillons sont stockés dans la section la plus reculée et gardée de l'hôpital. Cela permet de :
+          </p>
+          <ul className="list-disc list-inside text-sm text-slate-400 mt-4 space-y-2 pl-2">
+            <li>Identifier les cadavres mutilés.</li>
+            <li>Préparer des transfusions d'urgence (clones sanguins).</li>
+            <li>Étudier les Kekkei Genkai en secret.</li>
+          </ul>
+        </Panel>
+      </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default AdministrationDOSS;
